@@ -1,0 +1,7 @@
+*.tfvars
+*.swp
+*.terraform
+*tfstate*
+.DS_STORE
+*.secrets
+*.kitchen/
