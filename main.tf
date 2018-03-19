@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "data-resourcegroup" {
+resource "azurerm_resource_group" "azurerm_resource_group" {
   name     = "${var.product}-data-${var.env}"
   location = "${var.location}"
 }
