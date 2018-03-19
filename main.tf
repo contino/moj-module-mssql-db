@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "azurerm_resource_group" {
-    name = "${var.resource_group_name}" 
-    location = "${var.resource_group_location}"
+  name     = "${var.product}-data-${var.env}"
+  location = "${var.location}"
 }
 
 resource "random_string" "password" {
@@ -12,7 +12,7 @@ resource "random_string" "password" {
 }
 
 resource "azurerm_sql_server" "sql_server" {
-  name                = "${var.mssql_name}"
+  name                = "${var.product}-${var.env}"
   location            = "${azurerm_resource_group.azurerm_resource_group.location}"
   resource_group_name = "${azurerm_resource_group.azurerm_resource_group.name}"
   version                      = "${var.mssql_version}"
@@ -21,10 +21,10 @@ resource "azurerm_sql_server" "sql_server" {
 }
 
 resource "azurerm_sql_database" "sql_server_database" {
-  name                = "${azurerm_sql_server.sql_server.name}"
+  name                = "${var.product}-${var.env}"
   location            = "${azurerm_resource_group.azurerm_resource_group.location}"
   resource_group_name = "${azurerm_resource_group.azurerm_resource_group.name}"
-  server_name         = "${azurerm_sql_server.sql_server.name}"
+  server_name         = "${var.product}-${var.env}"
 
 }
 

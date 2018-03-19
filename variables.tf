@@ -1,11 +1,9 @@
-variable "mssql_name" {
+variable "product" {
   type = "string"
-  description = "Name of MS SQL Server."
 }
 
-variable "resource_group_name" {
-  type    = "string"
-  description = "Your MS SQL DB needs to be in a resource group. Use the name of an existing group or use a new one to have one created."
+variable "env" {
+  type = "string"
 }
 
 variable "resource_group_location" {
