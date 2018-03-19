@@ -11,6 +11,14 @@ resource "random_string" "password" {
   number  = true
 }
 
+resource "azurerm_sql_firewall_rule" "allow_all_azure_services_rule" {
+  name                = "Allow All Azure Services"
+  resource_group_name = "${azurerm_resource_group.azurerm_resource_group.name}"
+  server_name         = "${var.product}-${var.env}"
+  start_ip_address    = "0.0.0.0"
+  end_ip_address      = "0.0.0.0"
+}
+
 resource "azurerm_sql_server" "sql_server" {
   name                = "${var.product}-${var.env}"
   location            = "${azurerm_resource_group.azurerm_resource_group.location}"
@@ -25,6 +33,5 @@ resource "azurerm_sql_database" "sql_server_database" {
   location            = "${azurerm_resource_group.azurerm_resource_group.location}"
   resource_group_name = "${azurerm_resource_group.azurerm_resource_group.name}"
   server_name         = "${var.product}-${var.env}"
-
 }
 
