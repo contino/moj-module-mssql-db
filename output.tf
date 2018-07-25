@@ -11,6 +11,10 @@ output "password" {
 	sensitive = true
 }
 
+output "atabase_name" {
+	value = "${azurerm_sql_database.sql_server_database.name}"
+}
+
 output "jdbc_connection_string" {
 	value = "jdbc:sqlserver://${azurerm_sql_server.sql_server.fully_qualified_domain_name}:1433;database=${azurerm_sql_server.sql_server.name};user=${var.mssql_user}@${azurerm_sql_server.sql_server.name};password=${random_string.password.result};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
 	sensitive = true
