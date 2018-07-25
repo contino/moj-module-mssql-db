@@ -36,7 +36,7 @@ variable "edition" {
 
 variable "requested_service_objective_name" {
   type    = "string"
-  default = "S1"
+  default = "S0"
 }
 
 # Valid values are:
