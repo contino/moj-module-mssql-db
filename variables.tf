@@ -18,6 +18,11 @@ variable "mssql_version" {
   description = "The MS SQL version"
 }
 
+variable "dbname" {
+  type = "string"
+  default = "${var.product}-${var.env}"
+}
+
 variable "mssql_user" {
   type        = "string"
   description = "Administrator login account name"
