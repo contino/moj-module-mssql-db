@@ -38,5 +38,5 @@ resource "azurerm_sql_database" "sql_server_database" {
   resource_group_name            = "${azurerm_resource_group.azurerm_resource_group.name}"
   server_name                    = "${azurerm_sql_server.sql_server.name}"
   edition                        = "${var.edition}"
-  requested_service_objective_id = "${var.requested_service_objective_id}"
+  requested_service_objective_name = "${var.requested_service_objective_name}"
 }

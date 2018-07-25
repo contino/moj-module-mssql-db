@@ -34,7 +34,7 @@ variable "edition" {
 #    Premium
 #    DataWarehouse
 
-variable "requested_service_objective_id" {
+variable "requested_service_objective_name" {
   type    = "string"
   default = "S1"
 }
@@ -44,4 +44,3 @@ variable "requested_service_objective_id" {
 #    S0, S1, S2, S3
 #   for Premium:
 #    P1, P2, P4, P6, P11 
-
