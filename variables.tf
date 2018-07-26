@@ -20,7 +20,6 @@ variable "mssql_version" {
 
 variable "dbname" {
   type = "string"
-  default = "${var.product}-${var.env}"
 }
 
 variable "mssql_user" {
