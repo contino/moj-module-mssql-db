@@ -27,7 +27,7 @@ resource "random_string" "password" {
 resource "azurerm_sql_firewall_rule" "allow_all_azure_services_rule" {
   name                = "Allow All Azure Services"
   resource_group_name = "${azurerm_resource_group.azurerm_resource_group.name}"
-  server_name         = "${var.product}-${var.env}"
+  server_name         = "${azurerm_sql_server.sql_server.name}"
   start_ip_address    = "0.0.0.0"
   end_ip_address      = "0.0.0.0"
 }
