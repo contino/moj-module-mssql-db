@@ -18,6 +18,10 @@ variable "mssql_version" {
   description = "The MS SQL version"
 }
 
+variable "servername" {
+  type = "string"
+}
+
 variable "dbname" {
   type = "string"
 }
