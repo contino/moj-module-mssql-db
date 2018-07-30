@@ -3,7 +3,7 @@ locals {
   dbname         = "${var.dbname != "" ? var.dbname : local.default_dbname}"
 
   default_server_name = "${var.product}-${var.env}"
-  servername = = "${var.server_name != "" ? var.server_name : local.default_server_name}"
+  server_name = "${var.server_name != "" ? var.server_name : local.default_server_name}"
 
 }
 
