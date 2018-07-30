@@ -2,6 +2,9 @@ locals {
   default_dbname = "${var.product}-${var.env}"
   dbname         = "${var.dbname != "" ? var.dbname : local.default_dbname}"
 
+  default_server_name = "${var.product}-${var.env}"
+  server_name = "${var.server_name != "" ? var.server_name : local.default_server_name}"
+
 }
 
 resource "azurerm_resource_group" "azurerm_resource_group" {
@@ -30,7 +33,7 @@ resource "azurerm_sql_firewall_rule" "allow_all_azure_services_rule" {
 }
 
 resource "azurerm_sql_server" "sql_server" {
-  name                         = "${var.product}-${var.env}"
+  name                         = "${local.server_name}"
   location                     = "${azurerm_resource_group.azurerm_resource_group.location}"
   resource_group_name          = "${azurerm_resource_group.azurerm_resource_group.name}"
   version                      = "${var.mssql_version}"
