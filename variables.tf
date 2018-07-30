@@ -18,7 +18,7 @@ variable "mssql_version" {
   description = "The MS SQL version"
 }
 
-variable "servername" {
+variable "server_name" {
   type = "string"
 }
 
